@@ -1,3 +1,5 @@
+using FinService.Services.Auth;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAuthentication("HeaderAuth")
+                .AddScheme<HeaderAuthenticationOptions, HeaderAuthenticationHandler>("HeaderAuth", null);
 
 var app = builder.Build();
 
