@@ -1,11 +1,10 @@
-﻿using System.Text.Json.Serialization;
+﻿using FinService.Models;
 
-namespace FinService.Models
+namespace FinService.DTOs
 {
-    public class WalletTransaction
+    public class WalletTransactionDto
     {
         public int Id { get; set; }
-        public Wallet Wallet { get; set; }
         public int WalletId { get; set; }
         public decimal Amount { get; set; }
         public DateTime TransactionDate { get; set; }
